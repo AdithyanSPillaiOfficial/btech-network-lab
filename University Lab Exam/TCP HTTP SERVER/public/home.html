@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Welcome Home</title>
+    <script>
+        const title = document.getElementById('title');
+        title.innerHTML = title.innerHTML+' '
+        setInterval(()=> {
+            var titlestr = title.innerHTML.split('');
+            var temp;
+            for(var i=0;i<titlestr.length;i++){
+                if(i==0){
+                   temp = titlestr[i]
+                }
+                else {
+                    titlestr[i-1]=titlestr[i];
+                }
+            }
+            titlestr[titlestr.length-1] = temp;
+
+            title.innerHTML = titlestr.join('');
+        }, 250);
+    </script>
+</head>
+<body>
+    <h2>Watch The Title Bar</h2>
+</body>
+</html>
